@@ -26,5 +26,7 @@ network={
 ## Prompt is too long
 
 `sudo nano ~/.bashrc`
+
 Find the if [ "$color_prompt" = yes] line.  Below that, edit the PS1 variable.
+
 Change the last w to a capital W
