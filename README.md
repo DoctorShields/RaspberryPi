@@ -30,3 +30,15 @@ network={
 Find the if [ "$color_prompt" = yes] line.  Below that, edit the PS1 variable.
 
 Change the last w to a capital W
+
+## Run at startup
+
+`sudo nano /etc/rc.local`
+
+Above the exit 0 line, add 
+
+`python3 /home/pi/Documents/[path to your file]/myscript.py &`
+
+Don't forget the ampersand
+
+## Colors in terminal
