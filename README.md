@@ -42,3 +42,9 @@ Above the exit 0 line, add
 Don't forget the ampersand
 
 ## Colors in terminal
+
+`sudo nano /etc/profile`
+
+Then, add at the end:
+
+`export TERM=xterm`
