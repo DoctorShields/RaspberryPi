@@ -58,3 +58,8 @@ while not online:
 	disp.image(image)
 	disp.display()
 
+
+  # making a lot of changes
+  # sweet
+  # i'm in repl.it
+
