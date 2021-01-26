@@ -37,6 +37,7 @@ draw.text((0, 0),  'Finging IP Address...',  font=font, fill=255)
 disp.image(image)
 disp.display()
 
+# Is this the padding that you use to create the graph image?
 ipaddr = "---.---.---.---"
 online = False
 
