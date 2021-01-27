@@ -1,6 +1,5 @@
 # By Dr. Shields
 
-import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
 
 from PIL import Image
@@ -51,7 +50,7 @@ while True:
     draw2.text((0,0), 'a(m/s2)', font=font, fill=255)
     # rotate image2 and then paste onto image1
     rot2 = img2.rotate(90)
-    img1.paste(rot2,(0,0,width,height2))
+#    img1.paste(rot2,(0,0,width,height2))
     draw1.line((leftSide,lineBot,width,lineBot),fill=255)
     draw1.line((leftSide,lineBot,leftSide,0),fill=255)
     arr = [0]*(xDivs+1)
