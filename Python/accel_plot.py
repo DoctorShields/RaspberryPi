@@ -23,7 +23,6 @@ disp.begin()
 disp.clear()
 disp.display()
 
-# Some vars
 width = disp.width
 height = disp.height
 height2 = 50
@@ -33,6 +32,9 @@ lineBot = 52
 xDivs = 12
 dx = floor(width/xDivs)
 
+# Load default font and write some text
+font = ImageFont.load_default()
+
 # Create image; 1 = Bilevel, L = greyscale, RGB = true color
 img1 = Image.new('1', (width, height))
 img2 = Image.new('1', (height2, width))
@@ -40,17 +42,14 @@ img2 = Image.new('1', (height2, width))
 # Create drawing objects on the images
 draw1 = ImageDraw.Draw(img1)
 draw2 = ImageDraw.Draw(img2)
-
-# Load default font and write some text
-font = ImageFont.load_default()
+draw1.text((44,54), 'Time(s)', font=font, fill=255)
+draw2.text((0,0), 'a(m/s2)', font=font, fill=255)
 
 while True:
     # font = ImageFont.truetype('AldotheApache.ttf', 15)
-    draw1.text((44,54), 'Time(s)', font=font, fill=255)
-    draw2.text((0,0), 'a(m/s2)', font=font, fill=255)
     # rotate image2 and then paste onto image1
-    rot2 = img2.rotate(90)
-#    img1.paste(rot2,(0,0,width,height2))
+    # rot2 = img2.rotate(90)
+    # img1.paste(rot2,(0,0,width,height2))
     draw1.line((leftSide,lineBot,width,lineBot),fill=255)
     draw1.line((leftSide,lineBot,leftSide,0),fill=255)
     arr = [0]*(xDivs+1)
