@@ -41,6 +41,8 @@ disp.display()
 ipaddr = "---.---.---.---"
 online = False
 
+print("hi, camden")
+
 while not online:
 	gw = os.popen("ip -4 route show default").read().split()
 	if len(gw) > 0:

@@ -48,8 +48,9 @@ draw2.text((0,0), 'a(m/s2)', font=font, fill=255)
 while True:
     # font = ImageFont.truetype('AldotheApache.ttf', 15)
     # rotate image2 and then paste onto image1
-    # rot2 = img2.rotate(90)
-    # img1.paste(rot2,(0,0,width,height2))
+    rot2 = img2.rotate(90)
+    img1.paste(rot2,(0,0,height2,width))
+    draw1.rectangle((leftSide+1,0,width,lineBot-1), outline=0, fill=0)
     draw1.line((leftSide,lineBot,width,lineBot),fill=255)
     draw1.line((leftSide,lineBot,leftSide,0),fill=255)
     arr = [0]*(xDivs+1)
