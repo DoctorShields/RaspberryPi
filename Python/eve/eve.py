@@ -1,6 +1,6 @@
 import board
 import busio
-import sleep
+import time
 
 from adafruit_is31fl3731.matrix import Matrix as Display
 
@@ -32,7 +32,32 @@ r9=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
 
 cols2 = [r1,r2,r3,r4,r5,r6,r7,r8,r9]
 
-for y,c in enumerate(cols):
-	for x,p in enumerate(c):
-		if p:
-			display.pixel(x,y,50)
+r1=[1,1,1,0,1,0,1,0,1,1,1,0,1,0,1,0,]
+r2=[1,0,0,0,1,0,1,0,1,0,0,0,1,0,1,0,]
+r3=[1,0,0,0,1,1,1,0,1,1,1,0,1,0,1,0,]
+r4=[1,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,]
+r5=[1,1,1,0,1,0,1,0,1,1,1,0,1,0,1,0,]
+r6=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
+r7=[1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,]
+r8=[0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,]
+r9=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]
+
+cols3 = [r1,r2,r3,r4,r5,r6,r7,r8,r9]
+
+def displayPixels(arr):
+	for y,c in enumerate(arr):
+		for x,p in enumerate(c):
+			if p:
+				display.pixel(x,y,50)
+			else:
+				display.pixel(x,y,0)
+
+while True:
+	displayPixels(cols1)
+	time.sleep(3)
+	displayPixels(cols2)
+	time.sleep(.1)
+	displayPixels(cols1)
+	time.sleep(3)
+	displayPixels(cols3)
+	time.sleep(3)
