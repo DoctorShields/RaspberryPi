@@ -1,7 +1,7 @@
 import board
 import busio
 import time
-from math import floor
+from math import floor, sqrt
 
 from adafruit_is31fl3731.matrix import Matrix as Display
 
@@ -11,12 +11,14 @@ display = Display(i2c)
 
 rows = 9
 cols = 16
-drop = 40
+drop = 50
 
 def displayPixels(xr):
 	for x in range(0,cols):
 		for y in range(0,rows):
-			val = 255-abs(x-xr)*drop-abs(floor(rows/2)-y)*drop
+			dist = sqrt((x-xr)**2 + (floor(rows/2)-y)**2)
+			val = 255-int(dist*drop)
+#			val = 255-abs(x-xr)*drop-abs(floor(rows/2)-y)*drop
 			if val < 0:
 				val = 0
 			display.pixel(x,y,val)
